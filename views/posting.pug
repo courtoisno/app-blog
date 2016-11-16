@@ -1,0 +1,26 @@
+html
+	head
+		title='blogging app'
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+		link(href="/css/materialize.min.css" type="text/css" rel ="stylesheet")
+		link(href="/styless.css" type="text/css" rel ="stylesheet")
+	body(class="blackbg")
+		div
+			h1 Here all posts
+
+			each post in posts
+
+				div.stretch
+					
+					a(href='/singlepost?id=' + post.id) #{post.title} 
+					p #{post.body}
+					p #{post.user.username}
+					br
+					br
+
+				
+
+		script(src="/jquery-3.1.1.min.js")
+		script(src="js/materialize.min.js")
+		script(src="custom.js")
+

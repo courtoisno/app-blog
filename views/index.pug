@@ -1,0 +1,36 @@
+html
+	head
+		title='blogging app'
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+		link(href="/css/materialize.min.css" type="text/css" rel ="stylesheet")
+		link(href="/styless.css" type="text/css" rel ="stylesheet")
+	body
+			
+		div(class="row")
+
+			
+				if user
+					nav(class="tabs" data-component="tabs")
+						ul
+							li(class="active")
+								a(href='/') Home
+							li
+								a(href='/logout') Log out here
+				else
+					div(class="col s12")
+
+						h1(id="title") Psssst!
+					div(class="col s6")
+						h2 Already registered ?
+							form(method='POST' action='/login')
+								p Username: <br>
+									input(name='Username' type='text' required)
+								p Password: <br>
+									input(name='password' type='text' required)
+								p 
+									input(type='submit' value='login' id='submit')
+					div(class="col s6")
+						h2 Not Yet registered?
+		script(src="/jquery-3.1.1.min.js")
+		script(src="/js/materialize.min.js")
+		script(src="custom.js")

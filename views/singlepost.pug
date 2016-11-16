@@ -1,0 +1,35 @@
+html
+	head
+		title='blogging app'
+		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+		link(href="/css/materialize.min.css" type="text/css" rel ="stylesheet")
+		link(href="/styless.css" type="text/css" rel ="stylesheet")
+	body(class="blackbg")
+		div
+			h1 POST 
+ 
+			each post in posts
+
+				div.stretch
+					
+					a #{post.title} 
+					p #{post.body}
+					p #{post.user.username}
+					br
+					br
+
+				form(method='POST' action='/comment' id=post.id)
+						p Comment here: <br>
+							input(id="herecom" name="comment" type="text")
+						p
+							input(id="button" type="submit" value="submit")
+				if post.comments
+					each comment in post.comments
+						div#result
+							p #{comment.comment}
+				
+
+		script(src="/jquery-3.1.1.min.js")
+		script(src="js/materialize.min.js")
+		script(src="custom.js")
+
