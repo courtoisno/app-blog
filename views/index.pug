@@ -4,33 +4,43 @@ html
 		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
 		link(href="/css/materialize.min.css" type="text/css" rel ="stylesheet")
 		link(href="/styless.css" type="text/css" rel ="stylesheet")
+		link(href="/css/animate.min.css" type="text/css" rel="stylesheet")
+		link(href="/css/pup-slider.css" type="text/css" rel="stylesheet")
+
+
 	body
 			
 		div(class="row")
 
 			
 				if user
-					nav(class="tabs" data-component="tabs")
-						ul
-							li(class="active")
-								a(href='/') Home
-							li
-								a(href='/logout') Log out here
+					h1(class="title") Psssst!
+					h1(class="title") Profile
+					h1(class="title") The posts
+					h1
+						a(href='/logout') Log out
 				else
 					div(class="col s12")
 
-						h1(id="title") Psssst!
-					div(class="col s6")
-						h2 Already registered ?
+						h1(class="title" id="tlt") Psssst!
+						h1(class="title" id="log") Log in
+						h1(class="title") Register
+						h1(class="title") The posts
+
+					div(class="col s6" id="slideRight")
+							span(id="formTitle") Psssst! Log in here
 							form(method='POST' action='/login')
 								p Username: <br>
 									input(name='Username' type='text' required)
 								p Password: <br>
-									input(name='password' type='text' required)
+									input(name='password' type='password' required)
 								p 
 									input(type='submit' value='login' id='submit')
 					div(class="col s6")
 						h2 Not Yet registered?
 		script(src="/jquery-3.1.1.min.js")
+		script(src="/js/pup-slider.js")
+		script(src="/js/jquery.textillate.js")
+		script(src="/js/jquery.lettering.js")
 		script(src="/js/materialize.min.js")
 		script(src="custom.js")

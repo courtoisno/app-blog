@@ -4,6 +4,25 @@
 	color: white;
 }
 
-#title{
-font-size: 260px;
+.title{
+	font-size: 240px;
+	font-weight: bold;
 }
+.title:hover{
+	text-decoration: underline;
+}
+
+#slideRight{
+	background-color: white;
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	border-left: 1px solid black;
+	margin-left: auto;
+	left: 100%;
+	display: none;
+}
+
+#formTitle{
+	font-size: 40px;
+font-weight: bold;}

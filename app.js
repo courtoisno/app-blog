@@ -155,10 +155,7 @@ app.get ('/newlog', (req,res) => {
 })
 
 app.post('/newlog', bodyParser.urlencoded({extended: true}), (req,res) =>{
-	console.log('soon')
 	var user = req.session.user
-
-	console.log(req.body)
 	//create new user
 	var newUser = {
 		username: req.body.name,
@@ -166,20 +163,21 @@ app.post('/newlog', bodyParser.urlencoded({extended: true}), (req,res) =>{
 		email: req.body.mail
 	}
 	//check if passwords corresponds
-	if (newUser.email !== req.body.mail2 ){
-		res.redirect('/message=' + encodeURIComponent("mail doesnt corresponds"))
-		console.log("no pass ok")
-	} 
+	// if (newUser.email !== req.body.mail2 ){
+	// 	res.redirect('/message=' + encodeURIComponent("mail doesnt corresponds"))
+	// 	console.log("ALLELJUJA")
+	// } 
 	//ENcrypting the password in the db -> HAVE TO replace hash in password instead of newUser.password
-	bcrypt.hash(newUser.password, 8, function(err, hash) {
+	bcrypt.hash(req.body.pass, 8, function(err, hash) {
+
 		if (err) throw err
 
 		User.findOrCreate ({
-				where: {
-				username: newUser.username,
-				password: hash,
-				email: newUser.email
-			}
+			where: {
+			username: newUser.username,
+			password: hash,
+			email: newUser.email
+		}
 		}).then (user=>{
 			//check if username already here or not
 			if (newUser.username == user.username){

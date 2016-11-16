@@ -18,4 +18,45 @@ $(document).ready(function() {
 		})
 	})
 
+//text animation PSsst
+	var bounce = $('#tlt');
+	bounce.textillate({
+			in: {
+	 			effect: 'wobble', 
+	 			delay: 10
+	 		}
+	})
+
+	var doIt = bounce.data('textillate')
+	bounce.mouseover(function() {
+		doIt.start();
+	})
+
+// Slide right
+	$('#log').click(function(){
+		var maybeNone = $("#slideRight").css('display')
+		console.log(close)
+
+		if (maybeNone === 'none'){
+			$('#slideRight').animate( {
+				left:'50%',
+			},
+				500
+			).css('display', 'block'
+			)}
+
+		if (maybeNone === 'block'){
+			$('#slideRight').animate({
+				left:'100%',
+			},
+				500, function(){
+					$('#slideRight').css('display', 'none')
+				}
+		)}
+
+	})
+
+
+
+
 })
