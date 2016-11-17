@@ -5,41 +5,63 @@ html
 		link(href="/css/materialize.min.css" type="text/css" rel ="stylesheet")
 		link(href="/styless.css" type="text/css" rel ="stylesheet")
 		link(href="/css/animate.min.css" type="text/css" rel="stylesheet")
-		link(href="/css/pup-slider.css" type="text/css" rel="stylesheet")
 
 
 	body
+		
 			
 		div(class="row")
 
 			
 				if user
-					h1(class="title") Psssst!
+					a(href='/')
+						h1(class="title" id="tlt") Psssst!
 					h1(class="title") Profile
-					h1(class="title") The posts
+					a(href='/posting') 						
+						h1(class="title") The posts
 					h1
 						a(href='/logout') Log out
 				else
 					div(class="col s12")
 
-						h1(class="title" id="tlt") Psssst!
+						a(href='/')
+							h1(class="title" id="tlt") Psssst!
 						h1(class="title" id="log") Log in
-						h1(class="title") Register
-						h1(class="title") The posts
+						h1(class="title" id="reg") Register
+						a(href='/posting') 
+							h1(class="title") The posts
 
 					div(class="col s6" id="slideRight")
-							span(id="formTitle") Psssst! Log in here
-							form(method='POST' action='/login')
-								p Username: <br>
-									input(name='Username' type='text' required)
-								p Password: <br>
-									input(name='password' type='password' required)
+						div(id="firstpart")
+							span(id="formTitle") Psssst! Log in here <br>
+							p(id="formIntro") To post wathever you like, your login is <br> required! It only takes 2 seconds.<br>
+						div
+							form(class="form1" method='POST' action='/login')
+								span Username <br>
+									input(class="username" name='Username' type='text' required)
+								span Password <br>
+									input(class="password" name='password' type='password' required)
 								p 
-									input(type='submit' value='login' id='submit')
-					div(class="col s6")
-						h2 Not Yet registered?
+									input(type='submit' value='Login' id='call_back_btn')
+
+					div(class="col s6" id="slideRR")
+						div(id="two")
+							span(id="formTitle2") Psssst! Register here <br>
+							p(id="formIntro2") Not yet registered ? Fill the field !<br>
+						div
+							form(class="form1" id="form2" method='POST' action='/login')
+								span Username <br>
+									input(class="username2" name='name' type='text' required)
+								span Password <br>
+									input(class="password" name='pass' type='password' required)
+								span Email <br>
+									input(class="email" name='mail' type='text' required)
+								span Repeat email <br>
+									input(class="email2" name='mail2' type='text' required)
+											
+								p 
+									input(type='submit' value='Sign up!' id='call_back_btn2')
 		script(src="/jquery-3.1.1.min.js")
-		script(src="/js/pup-slider.js")
 		script(src="/js/jquery.textillate.js")
 		script(src="/js/jquery.lettering.js")
 		script(src="/js/materialize.min.js")

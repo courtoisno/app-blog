@@ -4,23 +4,52 @@ html
 		link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
 		link(href="/css/materialize.min.css" type="text/css" rel ="stylesheet")
 		link(href="/styless.css" type="text/css" rel ="stylesheet")
+		link(href="/css/animate.min.css" type="text/css" rel="stylesheet")
+
 	body(class="blackbg")
+
 		div
-			h1 Here all posts
-
-			each post in posts
-
-				div.stretch
-					
-					a(href='/singlepost?id=' + post.id) #{post.title} 
-					p #{post.body}
-					p #{post.user.username}
-					br
-					br
+			if user
 
 				
+				h1(class="title" id="tlt") Psssst!
+				h1(class="title") Profile
+				a(href='/posting') 
+					h1(class="title") All posts
+
+				h1(class="title")
+						a(href='/logout') Log out
+			else
+
+				div(class="col s12")
+
+					h1(class="title" id="tlt") Psssst!
+					h1(class="title" id="ptg") All posts					
+					a(href='/')
+						h1(id="home") ← Home
+
+				div(class="col s6" id="slidePosts")
+					div.scroll
+						div(id="postIntroduction")
+							span(id="postTitle") Psssst! All Posts. <br>
+							p(id="postIntro") If you want to post your deepest secrets, or how cool your life is, you need to log in. If you dont have an account yet, feel free to register.<br>
+
+						div(class="allposts")
+
+							each post in posts
+								div(class="messagesWrap")
+									div(class="messages")
+										
+										a(href='/singlepost?id=' + post.id class="titrepost") #{post.title} 
+										p(class="bodypost") <b> #{post.user.username}:</b> #{post.body}
+								
+							
+										br
+
+					
 
 		script(src="/jquery-3.1.1.min.js")
-		script(src="js/materialize.min.js")
+		script(src="/js/jquery.textillate.js")
+		script(src="/js/jquery.lettering.js")
+		script(src="/js/materialize.min.js")
 		script(src="custom.js")
-

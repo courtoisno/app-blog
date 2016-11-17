@@ -154,7 +154,7 @@ app.get ('/newlog', (req,res) => {
 	res.render('newlog')
 })
 
-app.post('/newlog', bodyParser.urlencoded({extended: true}), (req,res) =>{
+app.post('/login', bodyParser.urlencoded({extended: true}), (req,res) =>{
 	var user = req.session.user
 	//create new user
 	var newUser = {

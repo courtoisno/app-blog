@@ -18,7 +18,7 @@ $(document).ready(function() {
 		})
 	})
 
-//text animation PSsst
+//text animation PSsst ! 
 	var bounce = $('#tlt');
 	bounce.textillate({
 			in: {
@@ -32,7 +32,8 @@ $(document).ready(function() {
 		doIt.start();
 	})
 
-// Slide right
+// Slide right -> LOG IN ///INDEX
+
 	$('#log').click(function(){
 		var maybeNone = $("#slideRight").css('display')
 		console.log(close)
@@ -56,7 +57,70 @@ $(document).ready(function() {
 
 	})
 
-
-
-
 })
+
+//slide riggt --> register //// INDEX
+
+$('#reg').click(function(){
+		var maybeNone = $("#slideRR").css('display')
+		console.log(close)
+
+		if (maybeNone === 'none'){
+			$('#slideRR').animate( {
+				left:'50%',
+			},
+				500
+			).css('display', 'block'
+			)}
+
+		if (maybeNone === 'block'){
+			$('#slideRR').animate({
+				left:'100%',
+			},
+				500, function(){
+					$('#slideRR').css('display', 'none')
+				}
+		)}
+
+	})
+
+
+
+$('#ptg').click(function(){
+		var maybeNonel = $("#slidePosts").css('display')
+		console.log('close')
+		console.log(maybeNonel)
+		if (maybeNonel === 'none'){
+			$('#slidePosts').animate( {
+				left:'50%',
+			},
+				500
+			).css('display', 'block'
+			)}
+
+		if (maybeNonel === 'block'){
+			$('#slidePosts').animate({
+				left:'100%',
+			},
+				500, function(){
+					$('#slidePosts').css('display', 'none')
+				}
+		)}
+
+	})
+
+
+//empty inputS
+$('.username').val('Lara Croft')
+
+$('.password').val('**********')
+
+$('.username2').val('Lara Croft')
+
+$('.email').val('Lara@croft.com')
+
+$('.email2').val('Lara@croft.com')
+
+
+
+
