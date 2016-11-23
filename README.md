@@ -2,7 +2,6 @@
 Project realised during the 12 weeks web development bootcamp with the NYCDA
 
 Task:
-Project Specification
 Create a blogging application that allows users to do the following:
 - register an account
 - login
