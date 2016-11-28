@@ -109,6 +109,28 @@ $('#ptg').click(function(){
 
 	})
 
+$('#pro').click(function(){
+		var maybeNonel = $("#slideprofile").css('display')
+		console.log('close')
+		console.log(maybeNonel)
+		if (maybeNonel === 'none'){
+			$('#slideprofile').animate( {
+				left:'50%',
+			},
+				500
+			).css('display', 'block'
+			)}
+
+		if (maybeNonel === 'block'){
+			$('#slideprofile').animate({
+				left:'100%',
+			},
+				500, function(){
+					$('#slideprofile').css('display', 'none')
+				}
+		)}
+
+	})
 
 //empty inputS
 $('.username').val('Lara Croft')
@@ -121,6 +143,8 @@ $('.email').val('Lara@croft.com')
 
 $('.email2').val('Lara@croft.com')
 
+$('.titpo').val(' What do you call a man with no body and just a nose? ')
+$('.bodypo').val('Nobody nose')
 
 
 

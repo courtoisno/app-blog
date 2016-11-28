@@ -23,13 +23,16 @@ input[type="password"]{
 	color: silver;
 
 }
+#profPage{
+background-color: springgreen;
+}
 .col.s12{
 	overflow: scroll;
 }
 .scroll{
 	    overflow: scroll;
     clear: both;
-    height: 2000px;
+    height: 3000px;
 }
 .blackbg{
 	background-color: black;
@@ -44,7 +47,14 @@ input[type="password"]{
 	text-decoration: underline;
 	color:springgreen;
 }
-
+.prof{
+	font-size: 220px;
+	font-weight: bold;
+}
+.prof:hover{
+	text-decoration: underline;
+	color:white;
+}
 #home{
 	font-size: 220px;
 	font-weight: bold;
@@ -52,6 +62,14 @@ input[type="password"]{
 #home:hover{
 	color:springgreen;
 }
+#home2{
+	font-size: 220px;
+	font-weight: bold;
+}
+#home2:hover{
+	color:white;
+}
+
 /* ______________Div_____________*/
 
 #firstpart{
@@ -65,6 +83,21 @@ input[type="password"]{
 	margin-right: 0px;
 	border-bottom: 3px solid white;
 	margin-top: 8px;
+}
+#profileIntroduction{
+	margin-left: -11px;
+	margin-right: 0px;
+	border-bottom: 3px solid black;
+	margin-top: 8px;
+}
+.userPost{
+	margin-left: -11px;
+	margin-right: 0px;
+	border-bottom: 3px solid black;
+	margin-top: 8px;
+}
+.userContent{
+	margin-left: 15px;
 }
 .messagesWrap{
 	border-bottom: 3px solid white;
@@ -81,14 +114,14 @@ input[type="password"]{
 	border-bottom: 3px solid black;
 	margin-top: 8px;
 }
-#call_back_btn{
+.call_back_btn{
 	background-color: white;
 	color: black;
 	font-size: 30px;
 	border-style: none;
 
 }
-#call_back_btn:hover{
+.call_back_btn:hover{
 	color:springgreen;
 	border-style: none;
 
@@ -133,6 +166,20 @@ input[type="password"]{
 
 }
 
+#slideprofile{
+	background-color: white;
+	width: 50%;
+	height: 1560px;
+	position: fixed;
+	border-left: 3px solid black;
+	margin-left: auto;
+	left: 100%;
+	display: none;
+	top:0px;
+	overflow: scroll;
+
+}
+
 #slideRR{
 	background-color: white;
 	width: 50%;
@@ -161,6 +208,14 @@ input[type="password"]{
 #postTitle:hover{
 	color: springgreen;
 }
+#hello{
+	font-size: 50px;
+	font-weight: bolder;
+	margin-left: 25px;
+}
+#hello:hover{
+	color: springgreen;
+}
 
 
 #formTitle2{
@@ -185,6 +240,12 @@ input[type="password"]{
 	margin-bottom: 15px;
 }
 #postIntro{
+	font-size: 30px;
+	margin-left: 25px;
+	margin-top: 10px;
+	margin-right:30px
+}
+#profileIntro{
 	font-size: 30px;
 	margin-left: 25px;
 	margin-top: 10px;

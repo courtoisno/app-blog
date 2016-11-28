@@ -20,9 +20,9 @@ html
 
 				form(method='POST' action='/comment' id=post.id)
 						p Comment here: <br>
-							input(id="herecom" name="comment" type="text")
+							input(id="herecom" name="comment" type="text" required)
 						p
-							input(id="button" type="submit" value="submit")
+							input(id="button" type="submit" value="submit" required)
 				if post.comments
 					each comment in post.comments
 						div#result

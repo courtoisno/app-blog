@@ -75,11 +75,36 @@ app.get('/ping', (req, res) =>{
 
 //Route2 - Home page
 app.get('/', (req, res)=>{
-	res.render('index',{
-		message:req.query.message,
-		user: req.session.user
-	})
-	console.log('route ok')
+	console.log('CHECK THIS OUTTTT')
+	console.log(req.session.user)
+	if (req.session.user) {
+		console.log('TRIGGERED')
+		Post.findAll({	
+			where: { 
+				userId: req.session.user.id
+			},
+			include: [User]
+
+		}).then( post => {
+			console.log('CHECK THIS OUTTTT AS WELLLLLL')
+			console.log(post)
+			res.render('index', {
+				posts: [post],
+				user: req.session.user,
+				message:req.query.message
+			})
+			console.log(post)
+			console.log('route ok')
+		})
+
+	} else {
+		console.log('joehoe')
+		res.render('index', {
+				user: req.session.user,
+				message:req.query.message
+		})
+	}
+	
 })
 
 //<----____________________________ LOG IN/OUT ____________________________----->
@@ -102,7 +127,7 @@ app.post('/login', bodyParser.urlencoded({extended: true}), (req, res) =>{
 	    		//check if my input correspond to my db
 				if ( result ) {
 					req.session.user = user;
-					res.redirect('/profile');
+					res.redirect('/');
 				} else {
 					res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
 				}
@@ -126,7 +151,7 @@ app.get('/profile', (req, res) => {
 			include: [User]
 
 		}).then(post => {
-			res.render('profile', {
+			res.render('index', {
 				posts: post,
 				user: user
 			})
@@ -154,7 +179,7 @@ app.get ('/newlog', (req,res) => {
 	res.render('newlog')
 })
 
-app.post('/login', bodyParser.urlencoded({extended: true}), (req,res) =>{
+app.post('/newlog', bodyParser.urlencoded({extended: true}), (req,res) =>{
 	var user = req.session.user
 	//create new user
 	var newUser = {
@@ -306,7 +331,7 @@ app.get('/ownpost',bodyParser.urlencoded({extended: true}), (req, res) =>{
 		include: [User]
 
 	}).then(post => {
-		res.render('profile', {
+		res.render('index', {
 			posts: [post],
 			user: user
 		})

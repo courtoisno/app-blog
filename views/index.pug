@@ -16,11 +16,37 @@ html
 				if user
 					a(href='/')
 						h1(class="title" id="tlt") Psssst!
-					h1(class="title") Profile
+					h1(class="title" id="pro") Profile
 					a(href='/posting') 						
-						h1(class="title") The posts
-					h1
-						a(href='/logout') Log out
+						h1(class="title") All posts
+					a(href='/logout') 
+						h1(class="title") Log out
+
+					div(class="col s6" id="slideprofile")
+						div.scroll
+							div(id="profileIntroduction")
+								span(id="hello") Hello, #{user.username}! <br>
+								p(id="profileIntro") Welcome to your profile page! You can see here all your posts, and post on our blog.
+
+							div(class="userPost")
+								div(class="userContent")
+									form(class="form1" method='POST' action='/posting')
+										p Title <br>
+											input(class="titpo" name="title" type="text" required)
+										p Post <br>
+											input(class="bodypo" name="body" type="text" required)
+										p
+											input(type="submit" value="submit" class="call_back_btn" required)
+						
+							div(class="userPersoPost")
+								if post
+									p Your posts here
+
+									each post in posts
+										p #{post.title} 
+										p #{post.body}
+								else
+									p No posts yet!
 				else
 					div(class="col s12")
 
@@ -42,14 +68,14 @@ html
 								span Password <br>
 									input(class="password" name='password' type='password' required)
 								p 
-									input(type='submit' value='Login' id='call_back_btn')
+									input(type='submit' value='Login' class='call_back_btn' required)
 
 					div(class="col s6" id="slideRR")
 						div(id="two")
 							span(id="formTitle2") Psssst! Register here <br>
 							p(id="formIntro2") Not yet registered ? Fill the field !<br>
 						div
-							form(class="form1" id="form2" method='POST' action='/login')
+							form(class="form1" id="form2" method='POST' action='/newlog')
 								span Username <br>
 									input(class="username2" name='name' type='text' required)
 								span Password <br>

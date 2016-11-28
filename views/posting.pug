@@ -10,12 +10,12 @@ html
 
 		div
 			if user
-
 				
 				h1(class="title" id="tlt") Psssst!
-				h1(class="title") Profile
 				a(href='/posting') 
 					h1(class="title") All posts
+				a(href='/')
+						h1(id="home") ← Home
 
 				h1(class="title")
 						a(href='/logout') Log out
@@ -43,7 +43,6 @@ html
 										a(href='/singlepost?id=' + post.id class="titrepost") #{post.title} 
 										p(class="bodypost") <b> #{post.user.username}:</b> #{post.body}
 								
-							
 										br
 
 					
